@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import PokemonCard from "./components/PokemonCard";
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
+  useEffect(() => {
+    alert("Hello Trainer");
+  }, []);
+
+  useEffect(() => {
+    pokemonIndex === 3 &&
+      setTimeout(() => {
+        alert("Pikachuuuu");
+      }, 300);
+  }, [pokemonIndex]);
+
   const pokemonList = [
     {
       name: "bulbasaur",

@@ -8,7 +8,8 @@ const PokemonCard = ({ pokemon, pokemonList }) => {
       imgSrc: PropTypes.string,
     }).isRequired,
   };
-
+  /*   if (pokemonList[pokemon].name === "pikachu") alert("pikapika");
+   */
   return (
     <div>
       <figure>
