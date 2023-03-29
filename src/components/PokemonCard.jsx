@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../pokemonCard.css";
 
-const PokemonCard = ({ pokemon, handleNext, pokemonList, handlePrev }) => {
+const PokemonCard = ({ pokemon, pokemonList }) => {
   PokemonCard.propTypes = {
     pokemon: PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -20,15 +19,6 @@ const PokemonCard = ({ pokemon, handleNext, pokemonList, handlePrev }) => {
         )}
         <figcaption>{pokemonList[pokemon].name}</figcaption>
       </figure>
-      <div className="btn-container">
-        {pokemon < pokemonList.length - 1 && (
-          <button className="btn" onClick={handleNext}>
-            Suivant
-          </button>
-        )}
-
-        {pokemon > 0 && <button onClick={handlePrev}>Précédent</button>}
-      </div>
     </div>
   );
 };

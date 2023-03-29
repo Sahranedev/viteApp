@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import NavBar from "./components/NavBar";
 import PokemonCard from "./components/PokemonCard";
 
 function App() {
@@ -40,6 +41,12 @@ function App() {
   return (
     <div className="App">
       <PokemonCard
+        pokemon={pokemonIndex}
+        handleNext={handleNext}
+        handlePrev={handlePrev}
+        pokemonList={pokemonList}
+      />
+      <NavBar
         pokemon={pokemonIndex}
         handleNext={handleNext}
         handlePrev={handlePrev}
