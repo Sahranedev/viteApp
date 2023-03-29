@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import { number } from "prop-types";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import PokemonCard from "./components/PokemonCard";
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
+  useEffect(() => {
+    alert("Hello Trainer");
+  }, []);
+
+  useEffect(() => {
+    pokemonIndex === 3 &&
+      setTimeout(() => {
+        alert("Pikachuuuu");
+      }, 300);
+  }, [pokemonIndex]);
+
   const pokemonList = [
     {
       name: "bulbasaur",
@@ -38,6 +50,10 @@ function App() {
     setPokemonIndex(pokemonIndex - 1);
   };
 
+  const handlePokePoke = (index) => {
+    setPokemonIndex(index);
+  };
+
   return (
     <div className="App">
       <PokemonCard
@@ -46,7 +62,12 @@ function App() {
         handlePrev={handlePrev}
         pokemonList={pokemonList}
       />
-      <NavBar pokemon={pokemonIndex} pokemonList={pokemonList} />
+      <NavBar
+        pokemon={pokemonIndex}
+        pokemonList={pokemonList}
+        handlePokePoke={handlePokePoke}
+        setPokemonIndex={setPokemonIndex}
+      />
     </div>
   );
 }
