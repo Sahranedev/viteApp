@@ -1,15 +1,18 @@
 import React from "react";
 import "../pokemonCard.css";
 
-const NavBar = ({ pokemon, pokemonList, handleNext, handlePrev }) => {
+const NavBar = ({ pokemonList, handlePokePoke }) => {
+  const handleButtonClick = (index) => {
+    handlePokePoke(index);
+  };
+
   return (
     <div className="btn-container">
-      {pokemon > 0 && <button onClick={handlePrev}>Précédent</button>}
-      {pokemon < pokemonList.length - 1 && (
-        <button className="btn" onClick={handleNext}>
-          Suivant
+      {pokemonList.map((pokemon, index) => (
+        <button key={index} onClick={() => handleButtonClick(index)}>
+          {pokemon.name}
         </button>
-      )}
+      ))}
     </div>
   );
 };

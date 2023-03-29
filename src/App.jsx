@@ -46,12 +46,7 @@ function App() {
         handlePrev={handlePrev}
         pokemonList={pokemonList}
       />
-      <NavBar
-        pokemon={pokemonIndex}
-        handleNext={handleNext}
-        handlePrev={handlePrev}
-        pokemonList={pokemonList}
-      />
+      <NavBar pokemon={pokemonIndex} pokemonList={pokemonList} />
     </div>
   );
 }
